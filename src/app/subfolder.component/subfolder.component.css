@@ -1,0 +1,41 @@
+
+
+
+.folder-row {
+    align-items: center;
+    margin-left: 25px;
+}
+
+
+.row-detail {
+    border: 1px white solid;
+    align-items: center;
+    display: flex;
+    flex-shrink: 1;
+    gap: 7px;
+    padding:5px;
+    max-width: fit-content;
+}
+
+
+.row-detail:hover {
+    flex-shrink: 1;
+    border: 1px black solid;
+}
+
+.row-detail .row-button {
+    visibility: hidden;
+}
+
+.row-button {
+    visibility: visible;
+    background-color: black;
+    border-radius: 50px;
+
+}
+
+.row-detail:hover .row-button {
+    visibility: visible;
+
+
+}

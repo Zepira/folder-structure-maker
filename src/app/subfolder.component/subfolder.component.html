@@ -1,0 +1,36 @@
+<div *ngFor="let folder of data" class="folder-row">
+
+  <div *ngIf="editingEntryId != folder.id">
+    <div class="row-detail">
+
+      <img *ngIf="folder.type=='file'" src="assets/file-regular.svg" height="15">
+      <img *ngIf="folder.type=='folder'" src="assets/folder-open-regular.svg" height="15">
+      {{folder.name}}
+
+
+      <button class="row-button" (click)="onDelete(folder)"><img src="assets/delete.svg" height="10"></button>
+      <button class="row-button" (click)="onCreate(folder)" *ngIf="folder.type == 'folder'"><img
+          src="assets/add.svg" height="10"></button>
+
+
+    </div>
+    <subfolder *ngIf="folder.children" [data]="folder.children" [onDelete]="onDelete"  [onCreate]="onCreate"
+      [editingEntryId]="editingEntryId"></subfolder>
+  </div>
+
+  <div *ngIf="editingEntryId == folder.id"  class="row-detail">
+    <div *ngIf="showInput==false">
+      <button (click)="createNew('file')">File</button>
+      <button (click)="createNew('folder')">Folder</button>
+    </div>
+    <div *ngIf="showInput==true">
+      <img *ngIf="newItemType=='file'" src="assets/file-regular.svg" height="15">
+      <img *ngIf="newItemType=='folder'" src="assets/folder-open-regular.svg" height="15">
+      <input (keyup)="onInput($event)" [value]="newItemName" placeholder="">
+      <button class="row-button" (click)="updateItem(folder)"><img src="assets/check.svg" height="10"></button>
+      <button class="row-button"  (click)="deleteItem(folder)"><img src="assets/cross.svg"
+          height="10"></button>
+    </div>
+  </div>
+
+</div>

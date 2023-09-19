@@ -1,0 +1,31 @@
+.banner {
+    background-color: black;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.heading {
+    color: white;
+    margin: 0px;
+}
+
+.main-content {
+    margin: 20px;
+}
+
+.add-root-button  {
+    background-color: black;
+    color:white;
+    border-radius: 5px;
+    padding:15px;
+    border: 0px;
+    margin-bottom: 25px;
+}
+
+ .row-button {
+
+    background-color: black;
+    border-radius: 50px;
+
+}
